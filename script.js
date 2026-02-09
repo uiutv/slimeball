@@ -716,9 +716,6 @@ class Game {
         });
     }
 
-    /**
-     * Entry Point
-     */
     init() {
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -833,7 +830,7 @@ class Game {
     }
 
     loop(timestamp) {
-        this.resize(); // Check resize every frame
+        this.resize();
 
         if (!this.lastTime) this.lastTime = timestamp;
         let dt = timestamp - this.lastTime;
@@ -928,7 +925,7 @@ class ControllerApp {
         this.jumpBtn = document.getElementById('jump-btn');
         this.startOverlay = document.getElementById('start-overlay');
         this.tiltVector = { x: 0, y: 0, magnitude: 0, angle: 0 };
-        // EMA Filter State
+
         this.lastX = 0;
         this.lastY = 0;
         this.alpha = 0.8;
